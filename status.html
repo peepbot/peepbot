@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Page</title>
+    <style>
+
+@keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            animation: fade-in 2s forwards;
+            padding: 20px;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 50px; /* Added space for the logo */
+        }
+        .status {
+            width: calc(33.33% - 20px);
+            background-color: #fcefee; /* Pastel pink */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s, background-color 0.3s;
+            overflow: hidden;
+        }
+        .service {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .online {
+            color: green;
+        }
+        .offline {
+            color: red;
+        }
+        .maintenance {
+            color: orange;
+        }
+        .countdown {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .signal-chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .signal-bar {
+            height: 20px;
+            background-color: green;
+            border-radius: 5px;
+            width: 20%;
+        }
+        .logo {
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 100px; /* Adjust the maximum width of the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff91e3;
+        }
+        .nav-button {
+            background-color: #ffd1f7; /* Pastel pink */
+            color: #64625c;
+            border: none;
+            border-radius: 3px;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .nav-button:hover {
+            background-color: #ffdfba; /* Lighter pastel pink */
+        }
+    </style>
+</head>
+<body>
+    <img src="https://cdn.discordapp.com/attachments/1224472625364074506/1229575287964958730/peep_3.png?ex=66302e39&is=661db939&hm=cdc0da273e56cea0c45649da3afdb160f052a6004f11be05270d0e441f624d7f&" alt="Your Logo" class="logo">
+    <div class="container">
+        <div class="status" id="websiteStatus">
+            <div class="service">Website:</div>
+            <div class="status-info maintenance">Under Maintenance</div>
+            <div class="countdown" id="websiteCountdown">5:00</div>
+        </div>
+        <div class="status" id="botStatus">
+            <div class="service">Discord Bot:</div>
+            <div class="status-info online">Online</div>
+            <div class="countdown" id="botCountdown">5:00</div>
+        </div>
+        <div class="status" id="apiStatus">
+            <div class="service">API:</div>
+            <div class="status-info online">Online</div>
+            <div class="countdown" id="apiCountdown">5:00</div>
+        </div>
+        <div class="status" id="databaseStatus">
+            <div class="service">Database:</div>
+            <div class="status-info online">Online</div>
+            <div class="countdown" id="databaseCountdown">5:00</div>
+        </div>
+        <div class="status" id="emailStatus">
+            <div class="service">Payment Service:</div>
+            <div class="status-info maintenance">Maintenance Needed</div>
+            <div class="countdown" id="emailCountdown">5:00</div>
+        </div>
+        <div class="status" id="authStatus">
+            <div class="service">Authentication:</div>
+            <div class="status-info online">Online</div>
+            <div class="countdown" id="authCountdown">5:00</div>
+        </div>
+        <div class="status" id="storageStatus">
+            <div class="service">File Storage:</div>
+            <div class="status-info maintenance">Undergoing Maintenance</div>
+            <div class="countdown" id="storageCountdown">5:00</div>
+        </div>
+        <!-- Add more status divs here -->
+    </div>
+    <div class="copyright">
+        &copy; 2024 Peep Bot. All rights reserved.
+    </div>
+    <button class="nav-button" onclick="location.href='index.html'">Back to Home</button>
+    <script>
+        // Countdown timer function
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var countdownDuration = 60; // 1 minute
+
+            var websiteCountdown = countdownDuration,
+                botCountdown = countdownDuration,
+                apiCountdown = countdownDuration,
+                databaseCountdown = countdownDuration,
+                emailCountdown = countdownDuration,
+                authCountdown = countdownDuration,
+                storageCountdown = countdownDuration;
+
+            var websiteDisplay = document.querySelector('#websiteCountdown'),
+                botDisplay = document.querySelector('#botCountdown'),
+                apiDisplay = document.querySelector('#apiCountdown'),
+                databaseDisplay = document.querySelector('#databaseCountdown'),
+                emailDisplay = document.querySelector('#emailCountdown'),
+                authDisplay = document.querySelector('#authCountdown'),
+                storageDisplay = document.querySelector('#storageCountdown');
+
+            startTimer(websiteCountdown, websiteDisplay);
+            startTimer(botCountdown, botDisplay);
+            startTimer(apiCountdown, apiDisplay);
+            startTimer(databaseCountdown, databaseDisplay);
+            startTimer(emailCountdown, emailDisplay);
+            startTimer(authCountdown, authDisplay);
+            startTimer(storageCountdown, storageDisplay);
+        };
+
+        document.onkeydown = function(e) {
+  if (e.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) 
+    return false; }
+    </script>
+</body>
+</html>

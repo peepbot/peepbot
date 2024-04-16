@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Peep Bot">
+    <meta name="description" content="Peep Bot - Cutest Bot Eva!">
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1224472625364074506/1229575287964958730/peep_3.png?ex=66302e39&is=661db939&hm=cdc0da273e56cea0c45649da3afdb160f052a6004f11be05270d0e441f624d7f&">
+    <title>Peep Bot</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Pastel blue */
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: fade-in 2s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .profile-picture {
+            margin-bottom: 20px;
+        }
+        .description {
+            color: #fff7b2; /* Pastel pink */
+            font-size: 20px;
+            line-height: 1.5;
+            max-width: 400px;
+            margin-bottom: 30px;
+        }
+        .social-links {
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            color: #fff7b2; /* Pastel pink */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .social-links a:hover {
+            color: #fff7b2; /* Pastel yellow */
+        }
+        .copyright {
+            margin-top: 20px;
+            color: #fff7b2;
+            font-size: 14px;
+        }
+        .invite-button {
+            padding: 10px 20px;
+            background-color: #c3c49f; /* Pastel pink */
+            color: #fff7b2; /* Pastel yellow */
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .invite-button:hover {
+            background-color: #ffd700; /* Pastel yellow */
+            color: #fff3ae; /* Pastel pink */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-picture">
+            <img src="https://media.discordapp.net/attachments/1224472625364074506/1229590590598152272/peep_4.png?ex=66303c79&is=661dc779&hm=35085b7e49bedea0bfe55dfa6584ed6998f39797d2f6c2016a7948ea475490d5&=&format=webp&quality=lossless" alt="Profile Picture">
+        </div>
+        <div class="description">
+            <h2>Peep Bot</h2>
+            <p>Meet Peep Bot, The cutest discord bot ever, currently in beta and undergoing maintenance often.</p>
+        </div>
+        <a class="invite-button" href="https://discord.com/oauth2/authorize?client_id=1229569951723950130&permissions=8&scope=bot" title="Invite Bot">Invite Bot</a>
+        
+        <div class="copyright">
+            &copy; 2024 Peep Bot. All rights reserved.
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/peepbot" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/vsMhNyD5bA" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="/status.html" title="Status"><i class="fas fa-signal"></i></a>
+            <a href="https://cash.app/$chiefrhett" title="Donate"><i class="fas fa-donate"></i></a>
+        </div>
+    </div>
+
+    <script>
+        document.onkeydown = function(e) {
+  if (e.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) 
+    return false; }
+    </script>
+</body>
+</html>

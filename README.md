@@ -23,3 +23,8 @@ To add Peep to your Discord server, simply click [here](bot_invite_link) and fol
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Online-brightgreen" alt="Bot Status">
 </p>
+<h1 align="center">Sponsors</h1>
+<p align="center">
+  <a href="https://discord.com/users/1215522544564703323"><img src="https://lanyard-profile-readme.vercel.app/api/1215522544564703323?bg=00000000&hideActivity=true" alt="Bot Status">
+  <a href="https://discord.com/users/958556067418230805"><img src="https://lanyard-profile-readme.vercel.app/api/958556067418230805?bg=00000000&hideActivity=true" alt="Bot Status">  
+</p>

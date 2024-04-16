@@ -20,12 +20,16 @@ Peep is a cute utility and moderation/fun bot designed to bring joy and function
 
 To add Peep to your Discord server, simply click [here](https://discord.com/oauth2/authorize?client_id=1229569951723950130&permissions=8&scope=bot) and follow the instructions.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Online-brightgreen" alt="Bot Status">
+<p align="left">
+  <img src="https://img.shields.io/badge/Bot Status-Online-green" alt="Bot Status">
 </p>
 
-<h1 align="center">Sponsors</h1>
+# <a href="https://cash.app/$chiefrhett"> Sponsor Us
+- **Sponsors**: If you sponsor please contact me via [discord](https://discord.com/users/1215522544564703323) you will receive your perks.
+- **Refunds**: Refunds are not given on any circumstances!
 
+
+<h1 align="center">Sponsors</h1>
 <p postion="center">
   <a href="https://discord.com/users/1215522544564703323"><img src="https://lanyard-profile-readme.vercel.app/api/1215522544564703323?bg=00000000&hideActivity=true" alt="Bot Status"></a>
   <a href="https://discord.com/users/958556067418230805"><img src="https://lanyard-profile-readme.vercel.app/api/958556067418230805?bg=00000000&hideActivity=true" alt="Bot Status"></a>
